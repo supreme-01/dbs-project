@@ -1,34 +1,4 @@
-<nav class="navbar navbar-expand-lg text-center">
-    <a class="navbar-brand text-center" href="#">Customer Rating System</a>
-    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button> -->
-  
-    <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-      </ul>
-    </div> -->
-  </nav>
+
 
   <div>
       <h3 class="text-center mt-3" style="color: brown;">Tabular Data</h3>
@@ -37,6 +7,7 @@
   <div class="row">
       <div class="col-lg-2"></div>
       <div class="col-lg-8">
+        <form  [formGroup]="dbsForm" (ngSubmit)="onSubmit()">
           <table class="table table-bordered mt-4">
               <tr class="text-center" style="background-color: brown; color: white;">
                 <th>HIGH RISK</th>
@@ -45,46 +16,46 @@
               </tr>
               <tr>
                   <td>
-                      H1:If there are more than <input class="form-control" type="text" value="10" readonly="true" ondblclick="this.readOnly='';"> incoming or outgoing (IN|OUT) transaction in a month from high risk country.
+                      H1:If there are more than <input id="h1" type="text" formControlName="h1" > incoming or outgoing (IN|OUT) transaction in a month from high risk country.
                   </td>
                   <td>
-                      M1:If there are more than <input class="form-control" type="text" value="10" readonly="true" ondblclick="this.readOnly='';"> incoming or outgoing (INN|OUT) transaction in a month from high risk/Non-high country.
+                      M1:If there are more than <input id="m1" type="text" formControlName="m1"> incoming or outgoing (INN|OUT) transaction in a month from high risk/Non-high country.
                   </td>
                   <td>
-                    L1:If there are less than <input class="form-control" type="text" value="10" readonly="true" ondblclick="this.readOnly='';"> incoming or outgoing (INN|OUT) transaction in a month from high risk/Non-high country.
+                    L1:If there are less than <input id="l1" type="text" formControlName="l1"> incoming or outgoing (INN|OUT) transaction in a month from high risk/Non-high country.
                   </td>
               </tr>
               <tr>
                 <td>
-                    H2:If sum of all incoming(INN) transaction is more than <input class="form-control" type="text" value="10" readonly="true" ondblclick="this.readOnly='';"> dollars in a month.
+                    H2:If sum of all incoming(INN) transaction is more than <input id="h2" type="text" formControlName="h2"> dollars in a month.
                 </td>
                 <td>
-                    M2:If sum of all incoming(INN) transaction is more than <input class="form-control" type="text" value="10" readonly="true" ondblclick="this.readOnly='';"> dollars and less than <input class="form-control" type="text" value="10" readonly="true" ondblclick="this.readOnly='';"> dollars in a month..
+                    M2:If sum of all incoming(INN) transaction is more than <input id="m2" type="text" formControlName="m2"> dollars and less than <input id="h21" type="text" formControlName="h21"> dollars in a month..
                 </td>
                 <td>
-                  L2:If sum of all incoming(INN) transaction is less than <input class="form-control" type="text" value="10" readonly="true" ondblclick="this.readOnly='';"> dollars in a month..
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    H3:If sum of all outgoing(OUT) transaction is more than <input class="form-control" type="text" value="10" readonly="true" ondblclick="this.readOnly='';"> dollars in a month.
-                </td>
-                <td>
-                    M3:If sum of all outgoing(OUT) transaction is more than <input class="form-control" type="text" value="10" readonly="true" ondblclick="this.readOnly='';"> dollars and less than <input class="form-control" type="text" value="10" readonly="true" ondblclick="this.readOnly='';"> dollars in a month.
-                </td>
-                <td>
-                  L3:If sum of all outgoing(OUT) transaction is less than <input class="form-control" type="text" value="10" readonly="true" ondblclick="this.readOnly='';"> dollars in a month.
+                  L2:If sum of all incoming(INN) transaction is less than <input id="l2" type="text" formControlName="l2"> dollars in a month..
                 </td>
             </tr>
             <tr>
                 <td>
-                    H4:If number of transaction in a day is more than <input class="form-control" type="text" value="10" readonly="true" ondblclick="this.readOnly='';">.
+                    H3:If sum of all outgoing(OUT) transaction is more than <input id="h3" type="text" formControlName="h3"> dollars in a month.
                 </td>
                 <td>
-                    M4:If number of transaction in a day is more than <input class="form-control" type="text" value="10" readonly="true" ondblclick="this.readOnly='';"> but less than <input class="form-control" type="text" value="10" readonly="true" ondblclick="this.readOnly='';">.
+                    M3:If sum of all outgoing(OUT) transaction is more than <input id="m3" type="text" formControlName="m3"> dollars and less than <input id="h31" type="text" formControlName="h31"> dollars in a month.
                 </td>
                 <td>
-                  L4:If number of transaction in a day is less than <input class="form-control" type="text" value="10" readonly="true" ondblclick="this.readOnly='';">.
+                  L3:If sum of all outgoing(OUT) transaction is less than <input id="l3" type="text" formControlName="l3"> dollars in a month.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    H4:If number of transaction in a day is more than <input id="h4" type="text" formControlName="h4">.
+                </td>
+                <td>
+                    M4:If number of transaction in a day is more than <input id="m4" type="text" formControlName="m4"> but less than <input id="h41" type="text" formControlName="h41">.
+                </td>
+                <td>
+                  L4:If number of transaction in a day is less than <input id="l4" type="text" formControlName="l4">.
                 </td>
             </tr>
               
@@ -92,11 +63,12 @@
           <div class="row">
               <div class="col-lg-5"></div>
               <div class="col-lg-4">
-                <button class="btn" style="background-color: brown; color: white;"> EVALUATE</button>
+                <input type="submit" value="EVALUATE">
               </div>
               <div class="col-lg-3"></div>
           </div>
-          
+        </form>
       </div>
+      
       <div class="col-lg-2"></div>
   </div>
