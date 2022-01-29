@@ -1,0 +1,13 @@
+.navbar {
+    background-color: brown;
+}
+
+a{
+    color: white;
+}
+button{
+    color: brown;
+    margin-left: 300px;
+    background-color:rgb(233, 236, 215);
+    border-color: black;
+}
